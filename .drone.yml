@@ -58,9 +58,12 @@ steps:
       - system_profiler SPSoftwareDataType
       - env
   - name: yarn
+    environment:
+      NVM_DIR: /Users/cristian.pop/.nvm
     commands:
-      - nvm use 8.0
-      - nvm alias default 8.0
+      - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
+      - $NVM_DIR/nvm.sh use 8.0
+      - $NVM_DIR/nvm.sh alias default 8.0
       - npm install -g yarn
       - yarn install --cache-folder .cache/yarn
   - name: bundle

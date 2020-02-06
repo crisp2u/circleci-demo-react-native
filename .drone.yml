@@ -56,7 +56,7 @@ steps:
   - name: yarn
     environment:
       NVM_DIR: /Users/cristian.pop/.nvm
-      PATH: "$NVM_DIR/versions/node/v8.0.0/binL/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH"
+      PATH: "/Users/cristian.pop/.nvm/versions/node/v8.0.0/binL/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH"
     commands:
       - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
       #- system_profiler SPSoftwareDataType

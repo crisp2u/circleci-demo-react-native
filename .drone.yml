@@ -57,7 +57,7 @@ steps:
     environment:
       NVM_DIR: /Users/cristian.pop/.nvm
     commands:
-      - [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+      - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
       - system_profiler SPSoftwareDataType
       - env
       - nvm use 8.0

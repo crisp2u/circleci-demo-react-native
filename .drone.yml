@@ -61,7 +61,7 @@ steps:
       - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
       #- system_profiler SPSoftwareDataType
       - $NVM_DIR/nvm.sh use 8.0
-      - $NVM_DIR/nvm alias default 8.0
+      - $NVM_DIR/nvm.sh alias default 8.0
       - env
       - npm install -g yarn
       - yarn install --cache-folder .cache/yarn

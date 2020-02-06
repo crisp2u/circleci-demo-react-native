@@ -16,7 +16,8 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "testResultsProcessor": "jest-junit"
+    "testResultsProcessor": "jest-junit",
+    "testPathIgnorePatterns": ["/node_modules/", "/.cache/yarn/"]
   },
   "dependencies": {
     "react": "16.0.0",

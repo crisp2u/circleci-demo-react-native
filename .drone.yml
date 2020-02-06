@@ -59,9 +59,9 @@ steps:
       PATH: "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"
     commands:
       - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
-      - system_profiler SPSoftwareDataType
-      - env
+      #- system_profiler SPSoftwareDataType
       - $NVM_DIR/nvm.sh use 8.0
+      - env
       - npm install -g yarn
       - yarn install --cache-folder .cache/yarn
   - name: bundle

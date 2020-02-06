@@ -70,5 +70,6 @@ steps:
     commands:
       - cd ios
       - bundle install
+      - bundle exec fastlane test
 
 

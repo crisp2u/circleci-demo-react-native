@@ -54,7 +54,10 @@ steps:
     commands:
       - echo "ruby-2.4" > ~/.ruby-version
   - name: yarn
+    environment:
+      NVM_DIR: /Users/cristian.pop/.nvm
     commands:
+      - [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
       - system_profiler SPSoftwareDataType
       - env
       - nvm use 8.0

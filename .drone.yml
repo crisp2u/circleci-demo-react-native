@@ -56,6 +56,7 @@ steps:
   - name: yarn
     environment:
       NVM_DIR: /Users/cristian.pop/.nvm
+      PATH: "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"
     commands:
       - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
       - system_profiler SPSoftwareDataType

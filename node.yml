@@ -1,0 +1,42 @@
+---
+kind: pipeline
+type: docker
+name: node
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    volumes:
+    - name: cache
+      path: /cache
+    settings:
+      restore: true
+      mount:
+        - .cache/yarn
+        - node_modules
+  - name: greeting
+    image: node:8
+    environment:
+      JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+    commands:
+      - yarn install --cache-folder .cache/yarn
+      - mkdir -p test-results/jest
+      - yarn run test
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    volumes:
+    - name: cache
+      path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - .cache/yarn
+        - node_modules
+volumes:
+  - name: cache
+    host:
+      path: /tmp/caches

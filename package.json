@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "fsevents": "^2.1.2",
     "jest-expo": "23.0.0",
     "jest-junit": "3.3.0",
     "react-test-renderer": "16.0.0"
@@ -17,7 +18,10 @@
   "jest": {
     "preset": "jest-expo",
     "testResultsProcessor": "jest-junit",
-    "testPathIgnorePatterns": ["/node_modules/", "/.cache/yarn/"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.cache/yarn/"
+    ]
   },
   "dependencies": {
     "react": "16.0.0",

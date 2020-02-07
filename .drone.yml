@@ -16,14 +16,13 @@ steps:
     settings:
       restore: true
       mount:
-        - .cache/yarn
         - node_modules
   - name: greeting
     image: node:8
     environment:
       JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
     commands:
-      - yarn install --cache-folder .cache/yarn
+      - yarn install
       - mkdir -p test-results/jest
       - yarn run test
   - name: rebuild-cache
@@ -34,7 +33,6 @@ steps:
     settings:
       rebuild: true
       mount:
-        - .cache/yarn
         - node_modules
 volumes:
   - name: cache
@@ -67,7 +65,7 @@ steps:
       - $NVM_DIR/nvm.sh use v8.17.0
       - $NVM_DIR/nvm.sh alias default v8.17.0
       - npm install -g yarn
-      - yarn install --cache-folder .cache/yarn
+      - yarn install
   - name: bundle
     commands:
       - cd ios

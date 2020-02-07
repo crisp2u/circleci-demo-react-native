@@ -18,7 +18,6 @@
     "preset": "jest-expo",
     "testResultsProcessor": "jest-junit",
     "modulePathIgnorePatterns":[
-      "node_modules/",
       ".cache/yarn/"
     ],
     "testPathIgnorePatterns": [

@@ -15,7 +15,7 @@ fastlane_version "2.67.0"
 
 default_platform :ios
 scan(
-    xcargs: "-UseModernBuildSystem=NO"
+    xcargs: "-UseModernBuildSystem=NO",
     scheme: "CircleCIDemoReactNative"
 )
 

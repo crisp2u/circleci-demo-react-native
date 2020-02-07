@@ -4,7 +4,6 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "fsevents": "^2.1.2",
     "jest-expo": "23.0.0",
     "jest-junit": "3.3.0",
     "react-test-renderer": "16.0.0"
@@ -26,5 +25,8 @@
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.50.3"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
   }
 }

@@ -52,6 +52,16 @@ platform:
 depends_on:
   - node
 steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    volumes:
+    - name: cache
+      path: /cache
+    settings:
+      restore: true
+      mount:
+        - .cache/yarn
+        - node_modules
   - name: setup ruby
     commands:
       - echo "ruby-2.4" > ~/.ruby-version
@@ -71,7 +81,22 @@ steps:
   - name: bundle
     commands:
       - cd ios
+      - brew install watchman
       - bundle install
       - bundle exec fastlane test
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    volumes:
+    - name: cache
+      path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - .cache/yarn
+        - node_modules
+volumes:
+  - name: cache
+    host:
+      path: /tmp/caches
 
 

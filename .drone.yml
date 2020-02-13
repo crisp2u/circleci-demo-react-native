@@ -47,12 +47,13 @@ name: macos
 platform:
   os: darwin
   arch: amd64
-depends_on:
-  - node
+#depends_on:
+#  - node
 steps:
   - name: setup
     commands:
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+      - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       - echo "ruby-2.4" > ~/.ruby-version
   - name: debug
     commands:
@@ -60,11 +61,10 @@ steps:
       - env
   - name: yarn
     environment:
-      NVM_DIR: /Users/cristian.pop/.nvm
+      #NVM_DIR: /Users/cristian.pop/.nvm
     commands:
-      - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
-      - $NVM_DIR/nvm.sh use v8.17.0
-      - $NVM_DIR/nvm.sh alias default v8.17.0
+      - nvm use v8.17.0
+      - nvm alias default v8.17.0
       - npm install -g yarn
       - yarn install
   - name: bundle

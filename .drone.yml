@@ -69,8 +69,7 @@ steps:
       - source ~/.bash_profile
       - command -v nvm
       - nvm install v8.17.0
-      - nvm use v8.17.0
-      - nvm alias default v8.17.0
+      - nvm use --delete-prefix v8.17.0
       - npm install -g yarn
       - yarn install
   - name: bundle

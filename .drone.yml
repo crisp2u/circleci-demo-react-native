@@ -62,8 +62,6 @@ steps:
       - system_profiler SPSoftwareDataType
       - env
   - name: yarn
-    environment:
-      NVM_DIR: /Users/cristian.pop/.nvm
     commands:
       - $NVM_DIR/nvm.sh use v8.17.0
       - $NVM_DIR/nvm.sh alias default v8.17.0

@@ -47,8 +47,8 @@ name: macos
 platform:
   os: darwin
   arch: amd64
-depends_on:
-  - node
+#depends_on:
+#  - node
 steps:
   - name: setup
     commands:

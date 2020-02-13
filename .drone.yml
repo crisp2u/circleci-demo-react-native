@@ -67,10 +67,10 @@ steps:
       - chmod +x $NVM_DIR/nvm.sh      
       - $NVM_DIR/nvm.sh
       - source ~/.bash_profile
-      - command -v nvm      
-      - npm config delete prefix 
-      - npm config set prefix $NVM_DIR/versions/node/v8.17.0      
+      - nvm debug
       - nvm install v8.17.0
+      - npm config delete prefix 
+      - npm config set prefix $NVM_DIR/versions/node/v8.17.0
       - nvm use --delete-prefix v8.17.0
       - npm install -g yarn
       - yarn install

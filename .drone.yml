@@ -59,7 +59,7 @@ steps:
       - env
   - name: yarn
     environment:
-      NVM_DIR: /Users/sladmin/.nvm
+      NVM_DIR: /Users/cristian.pop/.nvm
     commands:
       - chmod +x $NVM_DIR/nvm.sh && $NVM_DIR/nvm.sh
       - $NVM_DIR/nvm.sh use v8.17.0

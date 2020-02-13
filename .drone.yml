@@ -68,6 +68,7 @@ steps:
       - $NVM_DIR/nvm.sh
       - source ~/.bash_profile
       - command -v nvm
+      - nvm unalias defaul
       - nvm install v8.17.0
       #- nvm use --delete-prefix v8.17.0
       - npm install -g yarn

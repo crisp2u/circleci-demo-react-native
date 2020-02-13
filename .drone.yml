@@ -61,6 +61,7 @@ steps:
 #    environment:
 #      NVM_DIR: "$$HOME/.nvm"
     commands:
+      - touch ~/.bash_profile
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
       - export NVM_DIR="$$HOME/.nvm"
       - chmod +x $NVM_DIR/nvm.sh

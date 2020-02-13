@@ -66,8 +66,9 @@ steps:
       - export NVM_DIR="$$HOME/.nvm"
       - chmod +x $NVM_DIR/nvm.sh
       - source ~/.bash_profile
+      - command -v nvm
       - $NVM_DIR/nvm.sh
-      - ls -la $NVM_DIR
+      - $NVM_DIR/nvm.sh instll v8.17.0
       - $NVM_DIR/nvm.sh use v8.17.0
       - $NVM_DIR/nvm.sh alias default v8.17.0
       - npm install -g yarn

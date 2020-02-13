@@ -51,10 +51,9 @@ platform:
 #  - node
 steps:
   - name: setup
-    environment:
-      NVM_DIR: "$$HOME/.nvm"
     commands:
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+      - export NVM_DIR="$$HOME/.nvm"
       - $NVM_DIR/nvm.sh
       - echo "ruby-2.4" > ~/.ruby-version
   - name: debug

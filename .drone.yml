@@ -69,7 +69,7 @@ steps:
   - name: bundle
     commands:
       - cd ios
-      - brew install watchman
+      - brew install ruby watchman
       - bundle install
       - bundle exec fastlane test
 

@@ -56,6 +56,7 @@ steps:
       - export NVM_DIR="$$HOME/.nvm"
       - chmod +x $NVM_DIR/nvm.sh
       - $NVM_DIR/nvm.sh
+      - ls -la $NVM_DIR
       - echo "ruby-2.4" > ~/.ruby-version
   - name: debug
     commands:
@@ -65,7 +66,6 @@ steps:
     environment:
       NVM_DIR: "$$HOME/.nvm"
     commands:
-      - env
       - ls -la $NVM_DIR
       - $NVM_DIR/nvm.sh use v8.17.0
       - $NVM_DIR/nvm.sh alias default v8.17.0

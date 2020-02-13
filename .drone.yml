@@ -22,9 +22,9 @@ steps:
     environment:
       #JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
     commands:
-      $- yarn install
-      $- mkdir -p test-results/jest
-      $- yarn run test
+      #- yarn install
+      #- mkdir -p test-results/jest
+      #- yarn run test
   - name: rebuild-cache
     image: drillster/drone-volume-cache
     volumes:

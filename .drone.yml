@@ -50,8 +50,9 @@ platform:
 depends_on:
   - node
 steps:
-  - name: setup ruby
+  - name: setup
     commands:
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
       - echo "ruby-2.4" > ~/.ruby-version
   - name: debug
     commands:

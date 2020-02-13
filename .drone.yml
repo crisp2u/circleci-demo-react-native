@@ -67,9 +67,9 @@ steps:
       - chmod +x $NVM_DIR/nvm.sh      
       - $NVM_DIR/nvm.sh
       - source ~/.bash_profile
-      - command -v nvm
-      - nvm unalias default
+      - command -v nvm      
       - nvm install v8.17.0
+      - nvm unalias default
       - nvm use --delete-prefix v8.17.0
       - npm install -g yarn
       - yarn install

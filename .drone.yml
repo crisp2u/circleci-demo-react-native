@@ -70,6 +70,7 @@ steps:
     commands:
       - cd ios
       - brew install ruby watchman
+      - gem install bundler --user-install
       - bundle install
       - bundle exec fastlane test
 

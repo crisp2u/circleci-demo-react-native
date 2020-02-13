@@ -67,6 +67,7 @@ steps:
       - chmod +x $NVM_DIR/nvm.sh      
       - $NVM_DIR/nvm.sh
       - source ~/.bash_profile
+      - nvm alias default node
       - nvm debug
       - nvm install v8.17.0
       - npm config delete prefix 
